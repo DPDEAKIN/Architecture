@@ -1,0 +1,25 @@
+classDiagram
+    class DataCollector {
+        - cameraFeed
+        - sensorData
+    }
+
+    class DataProcessor {
+        - computerVisionAlgorithms
+        - machineLearningModels
+    }
+
+    class DataStorage {
+        - cloudStorage
+        - localStorage
+    }
+
+    class DataAnalyst {
+        - statisticalAnalysis
+        - visualizationTools
+    }
+
+    DataCollector "**provides data to**" --> DataProcessor
+    DataProcessor "**processes data and sends to**" --> DataStorage
+    DataStorage "**provides data to**" --> DataAnalyst
+    DataAnalyst "**generates insights and sends to**" --> DataCollector
